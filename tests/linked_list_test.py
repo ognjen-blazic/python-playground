@@ -35,6 +35,36 @@ class LinkedListTestCase(unittest.TestCase):
 
         self.assertEqual(3, linked_list.count)
 
+    def test_remove_front(self):
+        linked_list = LinkedList()
+
+        linked_list.add_end(Node(1))
+        linked_list.add_end(Node(3))
+        linked_list.add_end(Node(5))
+
+        linked_list.remove_front()
+
+        current_node = linked_list.head
+        while current_node is not linked_list.tail:
+            print(current_node.value)
+            current_node = current_node.next
+        print(current_node.value)
+
+        self.assertEqual(2, linked_list.count)
+
+    def test_remove_end(self):
+        linked_list = LinkedList()
+
+        linked_list.add_end(Node(1))
+        linked_list.add_end(Node(3))
+        linked_list.add_end(Node(5))
+
+        linked_list.remove_end()
+        linked_list.remove_end()
+        linked_list.remove_end()
+
+        self.assertEqual(0, linked_list.count)
+
 
 if __name__ == '__main__':
     unittest.main()
