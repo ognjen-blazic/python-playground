@@ -6,7 +6,7 @@ class LinkedList:
     def add_front(self, node):
         old_head = self.head
         self.head = node
-        self.head.next = old_head
+        self.head.next_node = old_head
         self.count = self.count + 1
 
         if self.count == 1:
@@ -16,7 +16,7 @@ class LinkedList:
         if self.count == 0:
             self.head = node
         else:
-            self.tail.next = node
+            self.tail.next_node = node
 
         self.count = self.count + 1
         self.tail = node
@@ -32,16 +32,25 @@ class LinkedList:
             return
 
         current_node = self.head
-        while current_node.next is not self.tail:
-            current_node = current_node.next
+        while current_node.next_node is not self.tail:
+            current_node = current_node.next_node
 
-        current_node.next = None
+        current_node.next_node = None
         self.tail = current_node
         self.count = self.count - 1
 
     def remove_front(self):
-        self.head = self.head.next
+        self.head = self.head.next_node
         self.count = self.count - 1
 
         if self.count == 0:
             self.tail = None
+
+    def contains(self, value):
+        current_node = self.head
+        while current_node is not None:
+            if current_node.value == value:
+                return True
+            current_node = current_node.next_node
+
+        return False

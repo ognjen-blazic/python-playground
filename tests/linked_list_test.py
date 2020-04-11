@@ -15,7 +15,7 @@ class LinkedListTestCase(unittest.TestCase):
         current_node = linked_list.head
         while current_node is not linked_list.tail:
             print(current_node.value)
-            current_node = current_node.next
+            current_node = current_node.next_node
         print(current_node.value)
 
         self.assertEqual(3, linked_list.count)
@@ -30,7 +30,7 @@ class LinkedListTestCase(unittest.TestCase):
         current_node = linked_list.head
         while current_node is not linked_list.tail:
             print(current_node.value)
-            current_node = current_node.next
+            current_node = current_node.next_node
         print(current_node.value)
 
         self.assertEqual(3, linked_list.count)
@@ -47,7 +47,7 @@ class LinkedListTestCase(unittest.TestCase):
         current_node = linked_list.head
         while current_node is not linked_list.tail:
             print(current_node.value)
-            current_node = current_node.next
+            current_node = current_node.next_node
         print(current_node.value)
 
         self.assertEqual(2, linked_list.count)
@@ -64,6 +64,24 @@ class LinkedListTestCase(unittest.TestCase):
         linked_list.remove_end()
 
         self.assertEqual(0, linked_list.count)
+
+    def test_contains_true(self):
+        linked_list = LinkedList()
+
+        linked_list.add_end(Node(1))
+        linked_list.add_end(Node(3))
+        linked_list.add_end(Node(5))
+
+        self.assertTrue(linked_list.contains(3))
+
+    def test_contains_false(self):
+        linked_list = LinkedList()
+
+        linked_list.add_end(Node(1))
+        linked_list.add_end(Node(3))
+        linked_list.add_end(Node(5))
+
+        self.assertFalse(linked_list.contains(4))
 
 
 if __name__ == '__main__':
