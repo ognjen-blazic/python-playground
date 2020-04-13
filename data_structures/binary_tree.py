@@ -1,8 +1,12 @@
+from data_structures.binary_tree_node import BinaryTreeNode
+
+
 class BinaryTree:
     head = None
     count = 0
 
-    def add(self, node):
+    def add(self, value):
+        node = BinaryTreeNode(value)
         if self.head is None:
             self.head = node
             self.count = 1

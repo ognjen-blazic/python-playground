@@ -1,9 +1,13 @@
+from data_structures.linked_list_node import LinkedListNode
+
+
 class LinkedList:
     head = None
     tail = None
     count = 0
 
-    def add_front(self, node):
+    def add_front(self, value):
+        node = LinkedListNode(value)
         old_head = self.head
         self.head = node
         self.head.next_node = old_head
@@ -12,7 +16,8 @@ class LinkedList:
         if self.count == 1:
             self.tail = self.head
 
-    def add_end(self, node):
+    def add_end(self, value):
+        node = LinkedListNode(value)
         if self.count == 0:
             self.head = node
         else:
@@ -49,7 +54,7 @@ class LinkedList:
     def contains(self, value):
         current_node = self.head
         while current_node is not None:
-            if current_node.value == value:
+            if current_node.value == value:  # TODO: use equals or compare
                 return True
             current_node = current_node.next_node
 
