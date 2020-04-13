@@ -17,7 +17,7 @@ class BinaryTree:
                 current_head.left = node
             else:
                 self.link(current_head.left, node)
-        else:  # equals values are considered as "greater"
+        else:  # equal values are considered as "greater"
             if current_head.right is None:
                 current_head.right = node
             else:
