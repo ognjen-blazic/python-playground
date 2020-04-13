@@ -1,13 +1,13 @@
 import unittest
 
-from data_structures.node import Node
+from data_structures.linked_list_node import LinkedListNode
 
 
 class NodeTestCase(unittest.TestCase):
     def test_iterate_nodes(self):
-        first_node = Node(value=3)
-        middle_node = Node(value=5)
-        last_node = Node(value=7)
+        first_node = LinkedListNode(value=3)
+        middle_node = LinkedListNode(value=5)
+        last_node = LinkedListNode(value=7)
 
         node = first_node
         first_node.link(middle_node)

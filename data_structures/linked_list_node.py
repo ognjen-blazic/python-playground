@@ -1,4 +1,4 @@
-class Node:
+class LinkedListNode:
     value = None
     next_node = None
 
