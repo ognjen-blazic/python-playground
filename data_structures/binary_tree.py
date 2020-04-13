@@ -31,7 +31,7 @@ class BinaryTree:
         current = self.head
 
         while current is not None:
-            if current.value == value:
+            if current.value == value:  # TODO: use equals or compare
                 return True
 
             if value < current.value:
