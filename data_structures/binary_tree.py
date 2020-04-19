@@ -40,6 +40,7 @@ class BinaryTree:
                 current = current.right
         return False
 
+    # TODO: pre/out order traversal and BFS
     def in_order_traversal(self, node):
         if node is None:
             return
